@@ -39,6 +39,6 @@ jobs:
           find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           cp -r /tmp/out/cards .
           printf "Card files built %s by build.py on main. See main's README.\n" "$(date -u +%F)" > README.md
-          git add cards README.md
+          git add -f cards README.md
           git commit -qm "Card files $(date -u +%F)"
           git push -f origin publish:data
